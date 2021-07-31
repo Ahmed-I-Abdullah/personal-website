@@ -9,18 +9,23 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "clsx": "^1.1.1",
-    "deepai": "^1.0.17",
-    "fs": "0.0.1-security",
-    "image-to-base64": "^2.2.0",
+    "npm-check": "^5.9.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-lottie": "^1.2.3",
+    "react-gradient": "^1.0.2",
+    "react-icons": "^4.2.0",
     "react-scripts": "4.0.3",
     "react-scroll": "^1.8.3",
+    "react-sky": "^1.1.0",
+    "react-spring": "^9.2.4",
+    "react-spring-3d-carousel": "^1.2.1",
+    "react-swipeable-views": "^0.14.0",
+    "react-textscramble": "^1.0.7",
     "react-tsparticles": "^1.32.0",
     "react-vertical-timeline-component": "^3.3.3",
     "sass": "^1.35.2",
-    "scrollreveal": "^4.0.9",
+    "shooting-stars": "0.0.6",
+    "uuid": "^8.3.2",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
@@ -46,5 +51,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@iconify-icons/simple-icons": "^1.1.34",
+    "@iconify/react": "^1.1.4"
   }
 }

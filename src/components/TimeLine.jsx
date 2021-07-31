@@ -8,18 +8,31 @@ import WorkIcon from "@material-ui/icons/Work";
 import DeveloperModeIcon from "@material-ui/icons/DeveloperMode";
 import DriveEtaIcon from "@material-ui/icons/DriveEta";
 import ComputerIcon from "@material-ui/icons/Computer";
-import SchoolIcon from '@material-ui/icons/School';
+import SchoolIcon from "@material-ui/icons/School";
 import "./timeline.scss";
 import { Grid, Typography, Fade } from "@material-ui/core";
 import who from "../assets/who.png";
 import aranite from "../assets/aranite.png";
 import solarcar from "../assets/solar-car.png";
 import techstart from "../assets/tech-start.png";
-import ucalgary from '../assets/ucalgary.png';
+import ucalgary from "../assets/ucalgary.png";
+import arabacademy from "../assets/arab-academy.png";
 
 const TimeLine = () => {
   return (
     <div>
+      <div>
+        <h1 style={{ paddingTop: "60px" }}>Experience</h1>
+        <hr
+          style={{
+            color: "#1c2d41",
+            width: "15em",
+            border: "4px solid",
+            borderRadius: "5px",
+            marginBottom: "80px",
+          }}
+        />
+      </div>
       <VerticalTimeline className="vertical-timeline vertical-timeline-custom-line">
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
@@ -222,8 +235,48 @@ const TimeLine = () => {
                   color: "#3A3A3A",
                 }}
               >
-
+                GPA: 3.988/4.0
+                <br />
+                Deans List 2019 - 2021
               </Typography>
+            </Grid>
+          </Grid>
+        </VerticalTimelineElement>
+        <VerticalTimelineElement
+          className="vertical-timeline-element--work"
+          contentStyle={{ background: "#ffffff", color: "#3A3A3A" }}
+          contentArrowStyle={{ borderRight: "7px solid  #ffffff" }}
+          date="January 2016 - June 2019"
+          dateClassName="date"
+          iconStyle={{ background: "#142961", color: "#fff" }}
+          icon={<SchoolIcon />}
+        >
+          <Grid item container>
+            <Grid xs={2}>
+              <img src={arabacademy} style={{ width: "80px" }}></img>
+            </Grid>
+            <Grid xs={10}>
+              <Typography
+                align="left"
+                variant="h2"
+                style={{
+                  paddingLeft: "20px",
+                  fontWeight: "bold",
+                  color: "#3A3A3A",
+                  fontSize: "1.2em",
+                }}
+              >
+                Student @ Arab Academy for Science, Technology & Maritime
+                Transport
+              </Typography>
+              <Typography
+                align="left"
+                variant="body2"
+                style={{
+                  paddingLeft: "20px",
+                  color: "#3A3A3A",
+                }}
+              ></Typography>
             </Grid>
           </Grid>
         </VerticalTimelineElement>

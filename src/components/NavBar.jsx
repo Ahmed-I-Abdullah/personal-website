@@ -1,7 +1,8 @@
-import React from "react";
-import { makeStyles, Button, useMediaQuery } from "@material-ui/core";
+import React, {useState, useRef} from "react";
+import { makeStyles, Button, useMediaQuery,Drawer, useTheme, List, ListItem, ListItemText, Divider  } from "@material-ui/core";
 import { Link as ScrollLink } from "react-scroll";
 import Logo from '../assets/logo.svg';
+import MenuIcon from '@material-ui/icons/Menu';
 
 const useStyles = makeStyles({
   navContainer: {
@@ -53,12 +54,17 @@ const useStyles = makeStyles({
         transitionDuration: '1.3s',
         opacity: '0.6',
       }
+  },
+  paper: {
+    background: '#CCCCCC',
   }
 });
 
 const NavBar = () => {
   const classes = useStyles();
-  const isExtraSmall = useMediaQuery('(max-width:700px)');
+  const theme = useTheme();
+  const isExtraSmall = useMediaQuery(theme.breakpoints.down('sm'));
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   return (
     <div className={classes.navContainer}>
@@ -81,14 +87,42 @@ const NavBar = () => {
                   Projects
                 </Button>
               </ScrollLink>
-            </React.Fragment>
-          ) : null}
-          <Button
+              <Button
             className={classes.navButton}
             onClick={() => {}}
           >
               Contact
           </Button>
+            </React.Fragment>
+          ) : (
+            <div>
+      <Button onClick={() => setDrawerOpen(true)}><MenuIcon style={{fontSize: '45px'}} /></Button>
+          <Drawer anchor="top" open={drawerOpen} onClose={() => setDrawerOpen(false)} classes={{ paper: classes.paper }} >
+          <div
+      role="presentation"
+      onClick={() => setDrawerOpen(false)}
+      onKeyDown={() => setDrawerOpen(false)}
+    >
+      <List>
+      <ListItem button selected={true} key="About">
+            <ListItemText primary="About" />
+          </ListItem>
+      <ListItem button key="Experience">
+            <ListItemText primary="Experience" />
+          </ListItem>
+          <ListItem button key="Projects">
+            <ListItemText primary="Projects" />
+          </ListItem>
+          <ListItem button key="Contact">
+            <ListItemText primary="Contact" />
+          </ListItem>
+      </List>
+    </div>
+          </Drawer>
+            </div>
+
+          )}
+          
         </div>
       </div>
     </div>
