@@ -59,7 +59,6 @@ const ProjectTile = ({ title, titleColors, stack, description }) => {
           style={{ width: "100%", padding: "10px 30px 30px 30px" }}
           justify="center"
         >
-          <Grid xs={12} container item justify="center" alignItems="center">
             <Grid xs={12} sm={6} item>
               <Button
                 variant="contained"
@@ -83,7 +82,6 @@ const ProjectTile = ({ title, titleColors, stack, description }) => {
                 View
               </Button>
             </Grid>
-          </Grid>
         </Grid>
       </Paper>
     </Grid>

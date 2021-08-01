@@ -1,0 +1,6 @@
+type Message @model {
+  id: ID!
+  from: String!
+  email: String!
+  message: String!
+}
