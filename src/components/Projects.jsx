@@ -102,7 +102,7 @@ const Projects = () => {
   });
 
   return (
-    <div className={classes.mainContainer}>
+    <div id="projects" className={classes.mainContainer}>
       <div>
         <h1 style={{ paddingTop: "80px" }}>Projects</h1>
         <hr

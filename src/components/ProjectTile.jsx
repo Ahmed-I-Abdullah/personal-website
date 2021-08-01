@@ -6,16 +6,22 @@ import VisibilityIcon from "@material-ui/icons/Visibility";
 
 const ProjectTile = ({ title, titleColors, stack, description }) => {
   return (
-    <Grid item xs={12} style={{ width: "100%" }}>
+    <Grid container style={{ width: "100%" }}>
       <Paper elevation={6}>
         <Grid
           container
           justify="center"
           alignItems="center"
-          style={{ width: "100%", minWidth: '300px' }}
+          style={{ width: "100%" }}
         >
           <Grid container item justify="flex-start" alignItems="center" xs={12}>
-            <Grid item xs={12} justify="flex-start" alignItems="flex-start" style={{padding: '10px'}}>
+            <Grid
+              item
+              xs={12}
+              justify="flex-start"
+              alignItems="flex-start"
+              style={{ padding: "10px" }}
+            >
               <Gradient
                 gradients={[
                   ["#373B44", "#4286f4"],
@@ -53,26 +59,30 @@ const ProjectTile = ({ title, titleColors, stack, description }) => {
           style={{ width: "100%", padding: "10px 30px 30px 30px" }}
           justify="center"
         >
-          <Grid item>
-            <Button
-              variant="contained"
-              style={{
-                backgroundColor: "#000",
-                color: "#fff",
-                marginRight: "30px",
-              }}
-              endIcon={<GitHubIcon />}
-            >
-              Github
-            </Button>
-            <Button
-              variant="contained"
-              color="primary"
-              style={{ color: "#fff" }}
-              endIcon={<VisibilityIcon />}
-            >
-              View
-            </Button>
+          <Grid xs={12} container item justify="center" alignItems="center">
+            <Grid xs={12} sm={6} item>
+              <Button
+                variant="contained"
+                style={{
+                  backgroundColor: "#000",
+                  color: "#fff",
+                  marginRight: "30px",
+                }}
+                endIcon={<GitHubIcon />}
+              >
+                Github
+              </Button>
+            </Grid>
+            <Grid xs={12} sm={6} item>
+              <Button
+                variant="contained"
+                color="primary"
+                style={{ color: "#fff" }}
+                endIcon={<VisibilityIcon />}
+              >
+                View
+              </Button>
+            </Grid>
           </Grid>
         </Grid>
       </Paper>

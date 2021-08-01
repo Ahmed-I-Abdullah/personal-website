@@ -15,7 +15,13 @@ const useStyles = makeStyles({
   container: {
     minHeight: "100vh",
     position: "relative",
-    zIndex: "100",
+  },
+  innerDiv: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: "center",
+    alignItems: "center",
+    height: 'calc(100vh - 150px)'
   },
   textImageContainer: {
     width: "76%",
@@ -28,11 +34,12 @@ const useStyles = makeStyles({
     justifyContent: "center",
     alignItems: "center",
     width: "100%",
+    height: 'calc(100% - 120px)'
   },
   picture: {
     width: "auto",
-    height: "190px",
-    border: "10px solid #1c2d41",
+    height: "150px",
+    border: "7px solid #1c2d41",
     boxShadow: "7px 4px 4px 5px rgba(111, 106, 106, 0.25)",
     borderRadius: "50%",
     margin: "auto",
@@ -48,21 +55,21 @@ const About = () => {
     <div className={classes.container}>
       <ParticlesAnimation />
       <NavBar />
+      <div id="about" className={classes.innerDiv}>
       <Grid
-        xs={12}
         container
         direction="row"
         justify="space-between"
         className={classes.textImageContainer}
       >
-        <img src={MyPicture} className={classes.picture} />
+        <img src={MyPicture} alt="profile" className={classes.picture} />
         <div className={classes.textContainer}>
           <Typography
             align="center"
             variant="h2"
             style={{
               fontWeight: "bold",
-              fontSize: extraSmall ? "1.5em" : small ? "2.5em" : "3.1em",
+              fontSize: extraSmall ? "1.5em" : small ? "2.5em" : "2.8em",
               marginTop: "35px",
             }}
             color="textPrimary"
@@ -74,7 +81,7 @@ const About = () => {
             variant="h2"
             style={{
               fontWeight: "bold",
-              fontSize: extraSmall ? "0.8" : small ? "1em" : "1.7em",
+              fontSize: extraSmall ? "0.8" : small ? "1em" : "1.4em",
               marginTop: "20px",
               padding: 0,
               width: "100%",
@@ -87,6 +94,7 @@ const About = () => {
         </div>
       </Grid>
       <InformationText />
+      </div>
     </div>
   );
 };

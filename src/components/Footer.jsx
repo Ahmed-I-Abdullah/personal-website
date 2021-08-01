@@ -1,14 +1,14 @@
 import {
   Typography,
-  makeStyles,
   Link,
   Divider,
   useMediaQuery,
-  useTheme
+  useTheme,
 } from "@material-ui/core";
+import { Link as ScrollLink } from "react-scroll";
 
 const Footer = () => {
-    const theme = useTheme();
+  const theme = useTheme();
   const extraSmall = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <footer style={{ backgroundColor: "#1c2d41" }}>
@@ -31,30 +31,34 @@ const Footer = () => {
             <Typography variant="h6" style={{ color: "#bac6d4" }}>
               Navigation
             </Typography>
-            <Link
-              style={{ color: "#fff" }}
-              component="button"
-              variant="body2"
-              onClick={() => {}}
-            >
-              About
-            </Link>
-            <Link
-              style={{ color: "#fff" }}
-              component="button"
-              variant="body2"
-              onClick={() => {}}
-            >
-              Experience
-            </Link>
-            <Link
-              style={{ color: "#fff" }}
-              component="button"
-              variant="body2"
-              onClick={() => {}}
-            >
-              Projects
-            </Link>
+            <ScrollLink to="about" smooth duration={1000}>
+              <Link
+                style={{ color: "#fff" }}
+                component="button"
+                variant="body2"
+              >
+                About
+              </Link>
+            </ScrollLink>
+            <ScrollLink to="experience" smooth duration={1000}>
+              <Link
+                style={{ color: "#fff" }}
+                component="button"
+                variant="body2"
+              >
+                Experience
+              </Link>
+            </ScrollLink>
+            <ScrollLink to="projects" smooth duration={1000}>
+              <Link
+                style={{ color: "#fff" }}
+                component="button"
+                variant="body2"
+                onClick={() => {}}
+              >
+                Projects
+              </Link>
+            </ScrollLink>
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <Typography variant="h6" style={{ color: "#bac6d4" }}>

@@ -39,7 +39,7 @@ const ContactMe = () => {
   const extraSmall = useMediaQuery(theme.breakpoints.down("xs"));
   const large = useMediaQuery(theme.breakpoints.down("lg"));
   return (
-    <div className={classes.mainContainer}>
+    <div id="contact" className={classes.mainContainer}>
       <div>
         <h1>Contact Me</h1>
         <hr
@@ -55,9 +55,10 @@ const ContactMe = () => {
         />
       </div>
       <div>
-        <Paper elevation={8} style={{ width: "fit-content", margin: "auto" }}>
+        <Paper elevation={8} style={{ width: "fit-content", margin: "auto", padding: 0 }}>
           <div>
             <img
+            alt="rocket"
               style={{
                 width: extraSmall
                   ? "70vw"

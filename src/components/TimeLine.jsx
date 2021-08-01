@@ -10,7 +10,7 @@ import DriveEtaIcon from "@material-ui/icons/DriveEta";
 import ComputerIcon from "@material-ui/icons/Computer";
 import SchoolIcon from "@material-ui/icons/School";
 import "./timeline.scss";
-import { Grid, Typography, Fade } from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
 import who from "../assets/who.png";
 import aranite from "../assets/aranite.png";
 import solarcar from "../assets/solar-car.png";
@@ -20,7 +20,7 @@ import arabacademy from "../assets/arab-academy.png";
 
 const TimeLine = () => {
   return (
-    <div>
+    <div id="experience">
       <div>
         <h1 style={{ paddingTop: "60px" }}>Experience</h1>
         <hr
@@ -45,7 +45,7 @@ const TimeLine = () => {
         >
           <Grid item container>
             <Grid xs={12} sm={2}>
-              <img src={who} style={{ width: "80px" }}></img>
+              <img alt="who" src={who} style={{ width: "80px" }}></img>
             </Grid>
             <Grid xs={10}>
               <Typography
@@ -87,7 +87,7 @@ const TimeLine = () => {
         >
           <Grid item container>
             <Grid xs={12} sm={2}>
-              <img src={aranite} style={{ width: "80px" }}></img>
+              <img alt="aranite" src={aranite} style={{ width: "80px" }}></img>
             </Grid>
             <Grid xs={10}>
               <Typography
@@ -128,7 +128,7 @@ const TimeLine = () => {
         >
           <Grid item container>
             <Grid xs={12} sm={2}>
-              <img src={solarcar} style={{ width: "80px" }}></img>
+              <img alt="solar car" src={solarcar} style={{ width: "80px" }}></img>
             </Grid>
             <Grid xs={10}>
               <Typography
@@ -171,7 +171,7 @@ const TimeLine = () => {
         >
           <Grid item container>
             <Grid xs={12} sm={2}>
-              <img src={techstart} style={{ width: "80px" }}></img>
+              <img alt="tech-start" src={techstart} style={{ width: "80px" }}></img>
             </Grid>
             <Grid xs={10}>
               <Typography
@@ -212,7 +212,7 @@ const TimeLine = () => {
         >
           <Grid item container>
             <Grid xs={12} sm={2}>
-              <img src={ucalgary} style={{ width: "80px" }}></img>
+              <img alt="ucalgary" src={ucalgary} style={{ width: "80px" }}></img>
             </Grid>
             <Grid xs={10}>
               <Typography
@@ -253,7 +253,7 @@ const TimeLine = () => {
         >
           <Grid item container>
             <Grid xs={12} sm={2}>
-              <img src={arabacademy} style={{ width: "80px" }}></img>
+              <img alt="arab academy" src={arabacademy} style={{ width: "80px" }}></img>
             </Grid>
             <Grid xs={10}>
               <Typography
