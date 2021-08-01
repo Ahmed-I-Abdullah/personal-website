@@ -44,7 +44,7 @@ const TimeLine = () => {
           icon={<DeveloperModeIcon />}
         >
           <Grid item container>
-            <Grid xs={2}>
+            <Grid xs={12} sm={2}>
               <img src={who} style={{ width: "80px" }}></img>
             </Grid>
             <Grid xs={10}>
@@ -86,7 +86,7 @@ const TimeLine = () => {
           icon={<WorkIcon />}
         >
           <Grid item container>
-            <Grid xs={2}>
+            <Grid xs={12} sm={2}>
               <img src={aranite} style={{ width: "80px" }}></img>
             </Grid>
             <Grid xs={10}>
@@ -127,7 +127,7 @@ const TimeLine = () => {
           icon={<DriveEtaIcon />}
         >
           <Grid item container>
-            <Grid xs={2}>
+            <Grid xs={12} sm={2}>
               <img src={solarcar} style={{ width: "80px" }}></img>
             </Grid>
             <Grid xs={10}>
@@ -170,7 +170,7 @@ const TimeLine = () => {
           icon={<ComputerIcon />}
         >
           <Grid item container>
-            <Grid xs={2}>
+            <Grid xs={12} sm={2}>
               <img src={techstart} style={{ width: "80px" }}></img>
             </Grid>
             <Grid xs={10}>
@@ -211,7 +211,7 @@ const TimeLine = () => {
           icon={<SchoolIcon />}
         >
           <Grid item container>
-            <Grid xs={2}>
+            <Grid xs={12} sm={2}>
               <img src={ucalgary} style={{ width: "80px" }}></img>
             </Grid>
             <Grid xs={10}>
@@ -252,7 +252,7 @@ const TimeLine = () => {
           icon={<SchoolIcon />}
         >
           <Grid item container>
-            <Grid xs={2}>
+            <Grid xs={12} sm={2}>
               <img src={arabacademy} style={{ width: "80px" }}></img>
             </Grid>
             <Grid xs={10}>

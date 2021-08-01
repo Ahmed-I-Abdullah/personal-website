@@ -13,7 +13,7 @@ const useStyles = makeStyles({
   mainContainer: {
     width: "76%",
     margin: "0px 12%",
-    paddingBottom: 50,
+    paddingBottom: 80,
   },
   resize: {
     fontSize: 50,
