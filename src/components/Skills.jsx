@@ -193,7 +193,7 @@ const Skills = () => {
         <hr
           style={{
             color: "#1c2d41",
-            width: "15em",
+            width: "10em",
             border: "4px solid",
             borderRadius: "5px",
             marginBottom: "80px",

@@ -10,7 +10,7 @@ import DriveEtaIcon from "@material-ui/icons/DriveEta";
 import ComputerIcon from "@material-ui/icons/Computer";
 import SchoolIcon from "@material-ui/icons/School";
 import "./timeline.scss";
-import { Grid, Typography } from "@material-ui/core";
+import { Grid, Typography, useMediaQuery, useTheme } from "@material-ui/core";
 import who from "../assets/who.png";
 import aranite from "../assets/aranite.png";
 import solarcar from "../assets/solar-car.png";
@@ -19,8 +19,10 @@ import ucalgary from "../assets/ucalgary.png";
 import arabacademy from "../assets/arab-academy.png";
 
 const TimeLine = () => {
+  const theme = useTheme();
+  const extraSmall = useMediaQuery(theme.breakpoints.down("xs"));
   return (
-    <div id="experience">
+    <div style={extraSmall ? {padding: '0px 5%'} : {}} id="experience">
       <div>
         <h1 style={{ paddingTop: "60px" }}>Experience</h1>
         <hr
@@ -55,7 +57,7 @@ const TimeLine = () => {
                   paddingLeft: "20px",
                   fontWeight: "bold",
                   color: "#3A3A3A",
-                  fontSize: "1.2em",
+                  fontSize: extraSmall ? "1.0em" : "1.2em",
                 }}
               >
                 Full Stack Developer @ World Health Organization through Develop
@@ -97,7 +99,7 @@ const TimeLine = () => {
                   paddingLeft: "20px",
                   fontWeight: "bold",
                   color: "#3A3A3A",
-                  fontSize: "1.2em",
+                  fontSize: extraSmall ? "1.0em" : "1.2em",
                 }}
               >
                 Full Stack Developer @ Aranite
@@ -128,7 +130,11 @@ const TimeLine = () => {
         >
           <Grid item container>
             <Grid xs={12} sm={2}>
-              <img alt="solar car" src={solarcar} style={{ width: "80px" }}></img>
+              <img
+                alt="solar car"
+                src={solarcar}
+                style={{ width: "80px" }}
+              ></img>
             </Grid>
             <Grid xs={10}>
               <Typography
@@ -138,7 +144,7 @@ const TimeLine = () => {
                   paddingLeft: "20px",
                   fontWeight: "bold",
                   color: "#3A3A3A",
-                  fontSize: "1.2em",
+                  fontSize: extraSmall ? "1.0em" : "1.2em",
                 }}
               >
                 Visual Communications Team Member @ University of Calgary Solar
@@ -171,7 +177,11 @@ const TimeLine = () => {
         >
           <Grid item container>
             <Grid xs={12} sm={2}>
-              <img alt="tech-start" src={techstart} style={{ width: "80px" }}></img>
+              <img
+                alt="tech-start"
+                src={techstart}
+                style={{ width: "80px" }}
+              ></img>
             </Grid>
             <Grid xs={10}>
               <Typography
@@ -181,7 +191,7 @@ const TimeLine = () => {
                   paddingLeft: "20px",
                   fontWeight: "bold",
                   color: "#3A3A3A",
-                  fontSize: "1.2em",
+                  fontSize: extraSmall ? "1.0em" : "1.2em",
                 }}
               >
                 Front-end Developer @ Tech Start UCalgary
@@ -212,7 +222,11 @@ const TimeLine = () => {
         >
           <Grid item container>
             <Grid xs={12} sm={2}>
-              <img alt="ucalgary" src={ucalgary} style={{ width: "80px" }}></img>
+              <img
+                alt="ucalgary"
+                src={ucalgary}
+                style={{ width: "80px" }}
+              ></img>
             </Grid>
             <Grid xs={10}>
               <Typography
@@ -222,7 +236,7 @@ const TimeLine = () => {
                   paddingLeft: "20px",
                   fontWeight: "bold",
                   color: "#3A3A3A",
-                  fontSize: "1.2em",
+                  fontSize: extraSmall ? "1.0em" : "1.2em",
                 }}
               >
                 Software Engineering Student @ University of Calgary
@@ -253,7 +267,11 @@ const TimeLine = () => {
         >
           <Grid item container>
             <Grid xs={12} sm={2}>
-              <img alt="arab academy" src={arabacademy} style={{ width: "80px" }}></img>
+              <img
+                alt="arab academy"
+                src={arabacademy}
+                style={{ width: "80px" }}
+              ></img>
             </Grid>
             <Grid xs={10}>
               <Typography
@@ -263,7 +281,7 @@ const TimeLine = () => {
                   paddingLeft: "20px",
                   fontWeight: "bold",
                   color: "#3A3A3A",
-                  fontSize: "1.2em",
+                  fontSize: extraSmall ? "1.0em" : "1.2em",
                 }}
               >
                 Student @ Arab Academy for Science, Technology & Maritime

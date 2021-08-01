@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { makeStyles } from "@material-ui/core";
+import { makeStyles, useMediaQuery, useTheme } from "@material-ui/core";
 import Carousel from "react-spring-3d-carousel";
 import { v4 as uuidv4 } from "uuid";
 import { config } from "react-spring";
@@ -100,17 +100,19 @@ const Projects = () => {
   ].map((slide, index) => {
     return { ...slide, onClick: () => setGoToSlide(index) };
   });
-
+  const theme = useTheme();
+  const extraSmall = useMediaQuery(theme.breakpoints.down("xs"));
   return (
     <div id="projects" className={classes.mainContainer}>
       <div>
-        <h1 style={{ paddingTop: "80px" }}>Projects</h1>
+        <h1 style={{ paddingTop: "60px" }}>Projects</h1>
         <hr
           style={{
             color: "#1c2d41",
-            width: "15em",
+            width: "10em",
             border: "4px solid",
             borderRadius: "5px",
+            marginBottom: extraSmall ? '30px' : '0px'
           }}
         />
       </div>
