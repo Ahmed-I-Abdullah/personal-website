@@ -10,7 +10,7 @@ import MyPicture from "../assets/ahmed-circle.png";
 import ParticlesAnimation from "./ParticlesAnimation";
 import InformationText from "./InformationText";
 import NavBar2 from "./NavBar2";
-import './fonts.scss';
+import './fonts.css';
 
 const useStyles = makeStyles({
   container: {

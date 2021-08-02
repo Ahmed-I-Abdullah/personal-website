@@ -9,7 +9,7 @@ import DeveloperModeIcon from "@material-ui/icons/DeveloperMode";
 import DriveEtaIcon from "@material-ui/icons/DriveEta";
 import ComputerIcon from "@material-ui/icons/Computer";
 import SchoolIcon from "@material-ui/icons/School";
-import "./timeline.scss";
+import "./timeline.css";
 import { Grid, Typography, useMediaQuery, useTheme } from "@material-ui/core";
 import who from "../assets/who.png";
 import aranite from "../assets/aranite.png";
