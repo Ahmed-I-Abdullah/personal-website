@@ -2,12 +2,8 @@ import React, { useState, useEffect } from "react";
 import Scrollspy from "react-scrollspy";
 import {
   makeStyles,
-  Paper,
-  TextField,
-  Button,
   useMediaQuery,
   useTheme,
-  Snackbar,
 } from "@material-ui/core";
 
 const useStyles = makeStyles({
@@ -60,16 +56,20 @@ const useStyles = makeStyles({
 
 const NavBar2 = () => {
   const classes = useStyles();
+  const theme = useTheme();
+  const extraSmall = useMediaQuery(theme.breakpoints.down("sm"));
   const [about, setAbout] = useState(null);
   const [contact, setContact] = useState(null);
   const [experience, setExperience] = useState(null);
   const [projects, setProjects] = useState(null);
+  const [skills, setSkills] = useState(null);
 
   useEffect(() => {
     setAbout(document.getElementById("about"));
     setContact(document.getElementById("contact"));
     setExperience(document.getElementById("experience"));
     setProjects(document.getElementById("projects"));
+    setSkills(document.getElementById("skills"));
   });
 
   return (
@@ -80,35 +80,48 @@ const NavBar2 = () => {
         top: 0,
         width: "100%",
         zIndex: "10",
+        padding: 0
       }}
       role="navigation"
     >
-      <ul>
+      <ul style={{width: "100%",padding: 0, margin: '0px !important'}}>
         <Scrollspy
-          items={["about", "experience", "projects", "contact"]}
+          items={["about", "experience", "skills", "projects", "contact"]}
           currentClassName={classes.isCurrent}
+          style={{padding: 0, margin: '0px !important'}}
         >
           <li
             className={classes.listItem}
             onClick={() => about?.scrollIntoView({ behavior: "smooth" })}
+            style={extraSmall ? {fontSize: '0.7em', margin: "0px 9px",} : {}}
           >
             <a className={classes.listAnchor}>About</a>
           </li>
           <li
             className={classes.listItem}
             onClick={() => experience?.scrollIntoView({ behavior: "smooth" })}
+            style={extraSmall ? {fontSize: '0.7em', margin: "0px 9px",} : {}}
           >
             <a className={classes.listAnchor}>Experience</a>
           </li>
           <li
             className={classes.listItem}
+            onClick={() => skills?.scrollIntoView({ behavior: "smooth" })}
+            style={extraSmall ? {fontSize: '0.7em'} : {}}
+          >
+            <a className={classes.listAnchor}>Skills</a>
+          </li>
+          <li
+            className={classes.listItem}
             onClick={() => projects?.scrollIntoView({ behavior: "smooth" })}
+            style={extraSmall ? {fontSize: '0.7em', margin: "0px 9px",} : {}}
           >
             <a className={classes.listAnchor}>Projects</a>
           </li>
           <li
             className={classes.listItem}
             onClick={() => contact?.scrollIntoView({ behavior: "smooth" })}
+            style={extraSmall ? {fontSize: '0.7em', margin: "0px 9px",} : {}}
           >
             <a className={classes.listAnchor}>Contact</a>
           </li>

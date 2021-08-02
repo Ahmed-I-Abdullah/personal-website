@@ -7,14 +7,14 @@ let phrases = [
 ];
 let freezeDuration = 2600;
 
-const InformationText = () => {
+const InformationText = ({fontSize}) => {
   const theme = useTheme();
   return (
     <div
       style={{
         marginTop: "50px",
         color: theme.palette.text.primary,
-        fontSize: "1.35em",
+        fontSize: fontSize,
         padding: 0,
       }}
     >

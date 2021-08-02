@@ -1,12 +1,9 @@
 import React from "react";
 import {
-  Grid,
-  Typography,
   makeStyles,
   useTheme,
   useMediaQuery,
 } from "@material-ui/core";
-import MyPicture from "../assets/ahmed-circle.png";
 import ParticlesAnimation from "./ParticlesAnimation";
 import InformationText from "./InformationText";
 import NavBar2 from "./NavBar2";
@@ -57,11 +54,11 @@ const About2 = () => {
       <NavBar2 />
       
       <div id="about" className={classes.innerDiv}>
-          <h1 style={{fontFamily: 'Indie Flower, cursive',color: '#fffffe', fontSize: '4.5em'}}>Hello, I'm <span style={{color: '#ff8906'}}>Ahmed Abdullah</span></h1>
+          <h1 style={{fontFamily: 'Indie Flower, cursive',color: '#fffffe', fontSize: extraSmall ? '2.5em' : '4.5em'}}>Hello, I'm <span style={{color: '#ff8906'}}>Ahmed Abdullah</span></h1>
 
-        <h2 style={{color: '#fffffe'}}>I’m a third year software engineering student at the Univeristy of
+        <h2 style={{color: '#fffffe', fontSize: extraSmall ? '0.8em': '1em'}}>I’m a third year software engineering student at the Univeristy of
             Calgary.</h2>
-            <InformationText />
+            <InformationText fontSize={extraSmall ? "1em" : "1.35em"}/>
       </div>
     </div>
   );

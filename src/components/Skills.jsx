@@ -84,7 +84,7 @@ const Tile = ({ name, color, children }) => {
             </div>
           </Grid>
           <Grid item xs={12}>
-            <Typography variant="h6" style={{ fontSize: "1.6em", color: '#a7a9be' }}>
+            <Typography variant="h6" style={{ fontSize: "1.6em", color: '#000' }}>
               {name}
             </Typography>
           </Grid>
@@ -187,7 +187,7 @@ const Skills = () => {
   const classes = useStyles();
   const [value, setValue] = useState(0);
   return (
-    <div className={classes.mainContainer}>
+    <div id="skills" className={classes.mainContainer}>
       <div>
         <h1 style={{ paddingTop: "80px",color: "#fffffe" }}>Skills</h1>
         <hr
