@@ -84,7 +84,7 @@ const Tile = ({ name, color, children }) => {
             </div>
           </Grid>
           <Grid item xs={12}>
-            <Typography variant="h6" style={{ fontSize: "1.6em" }}>
+            <Typography variant="h6" style={{ fontSize: "1.6em", color: '#a7a9be' }}>
               {name}
             </Typography>
           </Grid>
@@ -189,10 +189,10 @@ const Skills = () => {
   return (
     <div className={classes.mainContainer}>
       <div>
-        <h1 style={{ paddingTop: "80px" }}>Skills</h1>
+        <h1 style={{ paddingTop: "80px",color: "#fffffe" }}>Skills</h1>
         <hr
           style={{
-            color: "#1c2d41",
+            color: "#ff8906",
             width: "10em",
             border: "4px solid",
             borderRadius: "5px",

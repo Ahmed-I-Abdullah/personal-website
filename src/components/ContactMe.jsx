@@ -126,10 +126,10 @@ const ContactMe = () => {
   return (
     <div id="contact" className={classes.mainContainer}>
       <div>
-        <h1>Contact Me</h1>
+        <h1 style={{color: "#fffffe"}}>Contact Me</h1>
         <hr
           style={{
-            color: "#222831",
+            color: "#ff8906",
             width: extraSmall ? "70vw" : "15em",
             border: "4px solid",
             borderRadius: "5px",

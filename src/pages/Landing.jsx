@@ -8,7 +8,7 @@ import Skills from "../components/Skills";
 import Projects from "../components/Projects";
 import ContactMe from "../components/ContactMe";
 import Footer from "../components/Footer";
-import About from "../components/About";
+import About2 from "../components/About2";
 
 const useStyles = makeStyles({
   mainContainer: {
@@ -26,14 +26,14 @@ const Landing = () => {
   return (
     <div
       style={{
-        background: "linear-gradient(to right, #8e9eab, #eef2f3)",
+        background: "#0f0e17",
         overflowX: "hidden",
       }}
     >
       <Fade in={true} timeout={3000}>
         <div className={classes.mainContainer}>
           <div>
-            <About />
+            <About2 />
           </div>
           <div
             className={classes.mainContainer2}

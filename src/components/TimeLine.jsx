@@ -24,10 +24,10 @@ const TimeLine = () => {
   return (
     <div style={extraSmall ? {padding: '0px 5%'} : {}} id="experience">
       <div>
-        <h1 style={{ paddingTop: "60px" }}>Experience</h1>
+        <h1 style={{ paddingTop: "60px", color: "#fffffe" }}>Experience</h1>
         <hr
           style={{
-            color: "#1c2d41",
+            color: "#ff8906",
             width: "15em",
             border: "4px solid",
             borderRadius: "5px",

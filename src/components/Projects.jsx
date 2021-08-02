@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { makeStyles, useMediaQuery, useTheme } from "@material-ui/core";
+import { makeStyles, useMediaQuery, useTheme, Button ,IconButton} from "@material-ui/core";
+import {ArrowBackIos, ArrowForwardIos} from '@material-ui/icons';
 import Carousel from "react-spring-3d-carousel";
 import { v4 as uuidv4 } from "uuid";
 import { config } from "react-spring";
@@ -28,8 +29,19 @@ const Projects = () => {
   const classes = useStyles();
   const [goToSlide, setGoToSlide] = useState(0);
   const [offsetRadius] = useState(2);
-  const [showNavigation] = useState(true);
-  const slideConfig = useState(config.gentle);
+  const theme = useTheme();
+  const extraSmall = useMediaQuery(theme.breakpoints.down("xs"));
+  const small = useMediaQuery(theme.breakpoints.down("sm"));
+  const medium = useMediaQuery(theme.breakpoints.down("md"));
+  const large = useMediaQuery(theme.breakpoints.down("lg"));
+
+  const handleSlideChange = (forward) => {
+    if(forward) {
+      setGoToSlide(prevState => prevState + 1);
+    } else {
+      setGoToSlide(prevState => prevState - 1);
+    }
+  }
   const slides = [
     {
       key: uuidv4(),
@@ -100,15 +112,14 @@ const Projects = () => {
   ].map((slide, index) => {
     return { ...slide, onClick: () => setGoToSlide(index) };
   });
-  const theme = useTheme();
-  const extraSmall = useMediaQuery(theme.breakpoints.down("xs"));
+
   return (
     <div id="projects" className={classes.mainContainer}>
       <div>
-        <h1 style={{ paddingTop: "60px" }}>Projects</h1>
+        <h1 style={{ paddingTop: "60px", color: "#fffffe" }}>Projects</h1>
         <hr
           style={{
-            color: "#1c2d41",
+            color: "#ff8906",
             width: "10em",
             border: "4px solid",
             borderRadius: "5px",
@@ -116,14 +127,22 @@ const Projects = () => {
           }}
         />
       </div>
-      <div style={{ width: "100%", height: "500px", margin: "0 auto" }}>
+      <div style={{ width: "100%", height: extraSmall ? "570px" : small?  "460px" : "400px", margin: "0 auto" }}>
         <Carousel
           slides={slides}
           goToSlide={goToSlide}
           offsetRadius={offsetRadius}
-          showNavigation={showNavigation}
-          animationConfig={slideConfig}
+          showNavigation={false}
+          animationConfig={config.gentle}
         />
+        <div>
+        <IconButton onClick={() => handleSlideChange(false)} color="primary"  component="span">
+          <ArrowBackIos style={{fontSize: '1.7em'}} />
+        </IconButton>
+        <IconButton onClick={() => handleSlideChange(true)} color="primary" component="span">
+          <ArrowForwardIos style={{fontSize: '1.7em'}} />
+        </IconButton>
+        </div>
       </div>
     </div>
   );

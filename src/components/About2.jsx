@@ -10,6 +10,7 @@ import MyPicture from "../assets/ahmed-circle.png";
 import ParticlesAnimation from "./ParticlesAnimation";
 import InformationText from "./InformationText";
 import NavBar2 from "./NavBar2";
+import './fonts.scss';
 
 const useStyles = makeStyles({
   container: {
@@ -21,12 +22,13 @@ const useStyles = makeStyles({
     flexDirection: 'column',
     justifyContent: "center",
     alignItems: "center",
-    height: 'calc(100vh - 150px)'
+    height: '100vh'
   },
   textImageContainer: {
     width: "76%",
     margin: "0px 12%",
     marginTop: "80px",
+    display: 'flex'
   },
   textContainer: {
     display: "flex",
@@ -40,11 +42,11 @@ const useStyles = makeStyles({
     width: "auto",
     height: "170px",
     borderRadius: "50%",
-    margin: "auto",
+    margin: "0 auto",
   },
 });
 
-const About = () => {
+const About2 = () => {
   const classes = useStyles();
   const theme = useTheme();
   const small = useMediaQuery(theme.breakpoints.down("sm"));
@@ -53,48 +55,16 @@ const About = () => {
     <div className={classes.container}>
       <ParticlesAnimation />
       <NavBar2 />
+      
       <div id="about" className={classes.innerDiv}>
-      <Grid
-        container
-        direction="row"
-        justify="space-between"
-        className={classes.textImageContainer}
-      >
-        <img src={MyPicture} alt="profile" className={classes.picture} />
-        <div className={classes.textContainer}>
-          <Typography
-            align="center"
-            variant="h2"
-            style={{
-              fontWeight: "bold",
-              fontSize: extraSmall ? "1.5em" : small ? "2.5em" : "2.8em",
-              marginTop: "35px",
-            }}
-            color="textPrimary"
-          >
-            Hello, I’m Ahmed.
-          </Typography>
-          <Typography
-            align="center"
-            variant="h2"
-            style={{
-              fontWeight: "bold",
-              fontSize: extraSmall ? "0.8" : small ? "1em" : "1.4em",
-              marginTop: "20px",
-              padding: 0,
-              width: "100%",
-            }}
-            color="textPrimary"
-          >
-            I’m a third year software engineering student at the Univeristy of
-            Calgary.
-          </Typography>
-        </div>
-      </Grid>
-      <InformationText />
+          <h1 style={{fontFamily: 'Indie Flower, cursive',color: '#fffffe', fontSize: '4.5em'}}>Hello, I'm <span style={{color: '#ff8906'}}>Ahmed Abdullah</span></h1>
+
+        <h2 style={{color: '#fffffe'}}>I’m a third year software engineering student at the Univeristy of
+            Calgary.</h2>
+            <InformationText />
       </div>
     </div>
   );
 };
 
-export default About;
+export default About2;

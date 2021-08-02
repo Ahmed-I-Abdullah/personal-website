@@ -11,7 +11,7 @@ const Footer = () => {
   const theme = useTheme();
   const extraSmall = useMediaQuery(theme.breakpoints.down("sm"));
   return (
-    <footer style={{ backgroundColor: "#1c2d41" }}>
+    <footer style={{ backgroundColor: "#1c2d41", zIndex: '1000', opacity: '' }}>
       <div
         style={{
           display: "flex",

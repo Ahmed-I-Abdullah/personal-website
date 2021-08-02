@@ -17,11 +17,12 @@ const useStyles = makeStyles({
   navContainer: {
     width: "100%",
     height: "100px",
+    backgroundColor: 'blue'
   },
   navRoot: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "center",
     height: "100%",
     width: "88%",
     margin: "0px 6%",
@@ -30,7 +31,7 @@ const useStyles = makeStyles({
   linkDiv: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "flex-between",
+    justifyContent: "center",
     alignContent: "center",
     cursor: "pointer",
     textDecoration: "none",
@@ -40,8 +41,8 @@ const useStyles = makeStyles({
   buttonsDiv: {
     display: "flex",
     flexDirection: "row",
-    width: "80%",
-    justifyContent: "flex-end",
+    width: "100%",
+    justifyContent: "center",
     alignItems: "center",
   },
   navTitle: {
@@ -50,7 +51,6 @@ const useStyles = makeStyles({
   },
   navButton: {
     margin: "0px 20px",
-    height: "50px",
     color: "#000000",
     fontWeight: "bold",
     fontSize: "1.05em",
@@ -78,12 +78,6 @@ const NavBar = () => {
   return (
     <div className={classes.navContainer}>
       <div className={classes.navRoot}>
-        <div
-          className={classes.logoDiv}
-          onClick={() => window.location.reload()}
-        >
-          <img alt="Ahmed Logo" src={Logo} className={classes.navTitle} />
-        </div>
         <div className={classes.buttonsDiv}>
           {!isExtraSmall ? (
             <React.Fragment>
