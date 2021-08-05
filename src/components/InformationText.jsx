@@ -1,4 +1,3 @@
-import { useTheme } from "@material-ui/core";
 import TextScramble from "react-textscramble";
 
 let phrases = [
@@ -8,12 +7,11 @@ let phrases = [
 let freezeDuration = 2600;
 
 const InformationText = ({fontSize}) => {
-  const theme = useTheme();
   return (
     <div
       style={{
         marginTop: "50px",
-        color: theme.palette.text.primary,
+        color: "#fff",
         fontSize: fontSize,
         padding: 0,
       }}

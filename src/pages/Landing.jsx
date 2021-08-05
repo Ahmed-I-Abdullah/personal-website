@@ -4,7 +4,7 @@ import {
   Fade,
 } from "@material-ui/core";
 import TimeLine from "../components/TimeLine";
-import Skills from "../components/Skills";
+import Skills3 from "../components/Skills3";
 import Projects from "../components/Projects";
 import ContactMe from "../components/ContactMe";
 import Footer from "../components/Footer";
@@ -42,7 +42,7 @@ const Landing = () => {
             <TimeLine />
           </div>
           <div>
-            <Skills />
+            <Skills3 />
             <Projects />
             <ContactMe />
           </div>

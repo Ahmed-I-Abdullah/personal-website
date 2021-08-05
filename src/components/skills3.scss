@@ -1,0 +1,151 @@
+$numIcons: 17;
+$radius: 350;
+$spinPeriod: 40;
+$spinSpeedRange: 0;
+$radiusDeviationRange: 0;
+$sameDirection: true;
+
+
+
+@for $i from 1 through $numIcons {
+  $direction: random(2) - 1;
+  @while $direction == 0 {
+    $direction: random(2) - 1;
+  }
+  @if $sameDirection {
+    $direction: 1;
+  }
+  $startingPos: $i * (360 / $numIcons + 1) * $direction;
+
+  @keyframes spin#{$i} {
+    0% {
+      transform: rotate($startingPos + deg);
+    }
+
+    100% {
+      transform: rotate($startingPos + ($direction * 360) + deg);
+    }
+  }
+}
+
+@keyframes grow-shrink {
+  0% {
+    transform: scale(0.7);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.7);
+  }
+}
+
+
+@media screen and (min-width: 960px){
+  $radius: 450;
+      .container {
+        position: relative;
+        height: $radius + px;
+        width: $radius + px;
+        left: -5%;
+      }
+      .orbit {
+        position: absolute;
+        border-radius: 100%;
+      
+        @for $i from 1 through $numIcons {
+          &:nth-child(#{$i}) {
+            $orbitSize: 230;
+            @if $radiusDeviationRange != 0 {
+              $orbitSize: 230 + random($radiusDeviationRange);
+            }
+            $orbitPad: ($radius - $orbitSize)/2;
+      
+            top: $orbitPad + px;
+            left: $orbitPad + px;
+            @if $spinSpeedRange == 0 {
+              animation: spin#{$i} $spinPeriod + s linear infinite;
+            } @else {
+              animation: spin#{$i} random($spinSpeedRange) + $spinPeriod + s linear infinite;
+            }
+           
+          }
+        }
+      }
+      
+}
+
+      
+
+@media screen and (max-width: 960px) {
+  $radius: 350;
+      .container {
+        position: relative;
+        height: $radius + px;
+        width: $radius + px;
+      }
+      .orbit {
+        position: absolute;
+        top: 75px;
+        left: 75px;
+        border-radius: 100%;
+      
+        @for $i from 1 through $numIcons {
+          &:nth-child(#{$i}) {
+            $orbitSize: 230;
+            @if $radiusDeviationRange != 0 {
+              $orbitSize: 230 + random($radiusDeviationRange);
+            }
+            $orbitPad: ($radius - $orbitSize)/2;
+      
+            top: $orbitPad + px;
+            left: $orbitPad + px;
+            @if $spinSpeedRange == 0 {
+              animation: spin#{$i} $spinPeriod + s linear infinite;
+            } @else {
+              animation: spin#{$i} random($spinSpeedRange) + $spinPeriod + s linear infinite;
+            }
+           
+          }
+        }
+      }
+}
+
+@media screen and (max-width: 600px) {
+  $radius: 200;
+      .container {
+        position: relative;
+        height: $radius + px;
+        width: $radius + px;
+      }
+      .orbit {
+        position: absolute;
+        top: 75px;
+        left: 75px;
+        border-radius: 100%;
+      
+        @for $i from 1 through $numIcons {
+          &:nth-child(#{$i}) {
+            $orbitSize: 230;
+            @if $radiusDeviationRange != 0 {
+              $orbitSize: 230 + random($radiusDeviationRange);
+            }
+            $orbitPad: ($radius - $orbitSize)/2;
+      
+            top: $orbitPad + px;
+            left: $orbitPad + px;
+            @if $spinSpeedRange == 0 {
+              animation: spin#{$i} $spinPeriod + s linear infinite;
+            } @else {
+              animation: spin#{$i} random($spinSpeedRange) + $spinPeriod + s linear infinite;
+            }
+           
+          }
+        }
+      }
+}
+
+.scaled {
+  transform: scale(1.5);
+}
+   
