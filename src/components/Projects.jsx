@@ -1,10 +1,30 @@
 import React, { useState } from "react";
-import { makeStyles, useMediaQuery, useTheme, Button ,IconButton} from "@material-ui/core";
-import {ArrowBackIos, ArrowForwardIos} from '@material-ui/icons';
+import {
+  makeStyles,
+  useMediaQuery,
+  useTheme,
+  Button,
+  IconButton,
+  Paper,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  Grow,
+} from "@material-ui/core";
+import { ArrowBackIos, ArrowForwardIos } from "@material-ui/icons";
 import Carousel from "react-spring-3d-carousel";
 import { v4 as uuidv4 } from "uuid";
 import { config } from "react-spring";
 import ProjectTile from "./ProjectTile";
+import ProjectTile2 from "./ProjectTile2";
+import Zoomtify from "../assets/zoomtify.svg";
+import SCM from "../assets/supply-chain-management.svg";
+import pachat from "../assets/pachat.svg";
+import ResumeRater from "../assets/resumetracker.png";
+import FacialRecognition from "../assets/facial-recognition.svg";
+import "./projects.scss";
 
 const useStyles = makeStyles({
   mainContainer: {
@@ -25,6 +45,42 @@ const useStyles = makeStyles({
   },
 });
 
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Grow ref={ref} {...props} timeout={1000} />;
+});
+
+const ProjectImage = ({ image, children }) => {
+  const theme = useTheme();
+  const extraSmall = useMediaQuery(theme.breakpoints.down("xs"));
+  const small = useMediaQuery(theme.breakpoints.down("sm"));
+  const medium = useMediaQuery(theme.breakpoints.down("md"));
+  const large = useMediaQuery(theme.breakpoints.down("lg"));
+  const [dialogOpen, setDialogOpen] = useState(false);
+  return (
+    <>
+      <img
+        className="project-item"
+        style={{ borderRadius: "20px", width: extraSmall ? "70vw" : small ? "50vw" : "33vw" }}
+        src={image}
+        onClick={() => setDialogOpen(true)}
+      />
+      <Dialog
+        open={dialogOpen}
+        TransitionComponent={Transition}
+        onClose={() => setDialogOpen(false)}
+        PaperProps={{
+          style: {
+            boxShadow: "0px 2px 16px 7px #A0A0A0",
+            background: "#10042c",
+          },
+        }}
+      >
+        <DialogContent>{children}</DialogContent>
+      </Dialog>
+    </>
+  );
+};
+
 const Projects = () => {
   const classes = useStyles();
   const [goToSlide, setGoToSlide] = useState(0);
@@ -36,13 +92,14 @@ const Projects = () => {
   const large = useMediaQuery(theme.breakpoints.down("lg"));
 
   const handleSlideChange = (forward) => {
-    if(forward) {
-      setGoToSlide(prevState => prevState + 1);
+    if (forward) {
+      setGoToSlide((prevState) => prevState + 1);
     } else {
-      setGoToSlide(prevState => prevState - 1);
+      setGoToSlide((prevState) => prevState - 1);
     }
-  }
-  const slides = [
+  };
+
+  const oldSlides = [
     {
       key: uuidv4(),
       content: (
@@ -109,6 +166,73 @@ const Projects = () => {
         />
       ),
     },
+  ];
+  const slides = [
+    {
+      key: uuidv4(),
+      content: (
+        <ProjectImage image={Zoomtify}>
+          <ProjectTile2
+            title="Zoomtify"
+            titleColor={["#EF0D0D", "#000000"]}
+            stack="Django, Python, React, TypeScript"
+            description="A web application where you can save your meetings instead of them getting burried in your inbox, stores a list of your contacts and allows you to send meeting details and your schedule to your room mates or any of your contacts on whatsapp"
+          />
+        </ProjectImage>
+      ),
+    },
+    {
+      key: uuidv4(),
+      content: (
+        <ProjectImage image={SCM}>
+          <ProjectTile2
+            title="Supply Chain Management"
+            titleColor={["#000000"]}
+            stack="Java, SQL"
+            description="An application that can manage the flow of office furniture on campus to help the univeristy reuse parts of furninture to create new furniture at the lowest prices"
+          />
+        </ProjectImage>
+      ),
+    },
+    {
+      key: uuidv4(),
+      content: (
+        <ProjectImage image={pachat}>
+          <ProjectTile2
+            title="Pachat"
+            titleColor={["#000000"]}
+            stack="GraphQL, AWS AppSync, AWS Amplify, React ,and Redux"
+            description="A real-time chat application having similar functionalities to Whatsapp where users can add other users and start a chat with them, change profile picture and status etc"
+          />
+        </ProjectImage>
+      ),
+    },
+    {
+      key: uuidv4(),
+      content: (
+        <ProjectImage image={ResumeRater}>
+          <ProjectTile2
+            title="Resume Rater"
+            titleColor={["#000000"]}
+            stack="Django, Python, React, Javascript"
+            description="A web application that takes a pdf resume, gives it a score and gives the reasons behind a score lower than 100 with feedback to improve them"
+          />
+        </ProjectImage>
+      ),
+    },
+    {
+      key: uuidv4(),
+      content: (
+        <ProjectImage image={FacialRecognition}>
+          <ProjectTile2
+            title="Facial Expressions"
+            titleColor={["#000000"]}
+            stack="TensorFlow, Python"
+            description="A convolutional neural network for facial expressions recognition, inspire to integrate it with online lectures to give feedback to professors on improving their pedagogical approaches"
+          />
+        </ProjectImage>
+      ),
+    },
   ].map((slide, index) => {
     return { ...slide, onClick: () => setGoToSlide(index) };
   });
@@ -123,11 +247,17 @@ const Projects = () => {
             width: "10em",
             border: "4px solid",
             borderRadius: "5px",
-            marginBottom: extraSmall ? '30px' : '0px'
+            marginBottom: extraSmall ? "30px" : "0px",
           }}
         />
       </div>
-      <div style={{ width: "100%", height: extraSmall ? "570px" : small?  "460px" : "400px", margin: "0 auto" }}>
+      <div
+        style={{
+          width: "100%",
+          height: extraSmall ? "260px" : small ? "350px" : "400px",
+          margin: "0 auto",
+        }}
+      >
         <Carousel
           slides={slides}
           goToSlide={goToSlide}
@@ -136,12 +266,20 @@ const Projects = () => {
           animationConfig={config.gentle}
         />
         <div>
-        <IconButton onClick={() => handleSlideChange(false)} color="primary"  component="span">
-          <ArrowBackIos style={{fontSize: '1.7em'}} />
-        </IconButton>
-        <IconButton onClick={() => handleSlideChange(true)} color="primary" component="span">
-          <ArrowForwardIos style={{fontSize: '1.7em'}} />
-        </IconButton>
+          <IconButton
+            onClick={() => handleSlideChange(false)}
+            color="primary"
+            component="span"
+          >
+            <ArrowBackIos style={{ fontSize: "1.7em" }} />
+          </IconButton>
+          <IconButton
+            onClick={() => handleSlideChange(true)}
+            color="primary"
+            component="span"
+          >
+            <ArrowForwardIos style={{ fontSize: "1.7em" }} />
+          </IconButton>
         </div>
       </div>
     </div>

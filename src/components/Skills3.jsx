@@ -146,7 +146,7 @@ const Skills3 = () => {
           style={{ display: "block", width: "300px", margin: "auto", marginBottom: extraSmall ? "-110px": "200px" }}
         >
           <div
-            style={{ left: extraSmall ? "auto" : small ? "-30%" : "-64%", marginTop: extraSmall ? "90px" : "" }}
+            style={{ left: extraSmall ? "5%" : small ? "-25%" : "-60%", marginTop: extraSmall ? "90px" : "" }}
             className={`container ${classes.orbitContainer}`}
           >
             <div

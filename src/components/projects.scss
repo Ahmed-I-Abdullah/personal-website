@@ -1,0 +1,27 @@
+.project-item {
+    cursor: pointer;
+    animation: box-shadow-unhover 0.5s forwards;
+}
+
+.project-item:hover {
+    animation: box-shadow-hover 0.5s forwards;
+}
+
+
+@keyframes box-shadow-hover {
+    100% {
+      transform: scale(1.05);
+      box-shadow: 0px 2px 16px 7px #A0A0A0;
+    }
+  }
+
+  @keyframes box-shadow-unhover {
+      from {
+        transform: scale(1.05);
+        box-shadow: 0px 2px 16px 7px #A0A0A0;
+      }
+    to {
+      transform: scale(1);
+      box-shadow: none;
+    }
+  }

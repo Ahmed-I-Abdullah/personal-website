@@ -13,24 +13,21 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import VisibilityIcon from "@material-ui/icons/Visibility";
 import Zoomtify from "../assets/zoomtify.svg";
 
-const ProjectTile = ({ title, titleColors, stack, description }) => {
+const ProjectTile2 = ({ title, titleColors, stack, description }) => {
   const theme = useTheme();
   const extraSmall = useMediaQuery(theme.breakpoints.down("xs"));
-  return (
-    <Grid container style={{ width: "100%", marginBottom: extraSmall ? '60px' : '0px'}}>
-      <Paper elevation={6}>
+  return (<>
         <Grid
           container
           justify="center"
           alignItems="center"
           style={{ width: "100%" }}
         >
-          <Grid container item justify="flex-start" alignItems="center" xs={12}>
+          <Grid container item justify="center" alignItems="center" xs={12}>
             <Grid
               item
-              xs={12}
-              justify="flex-start"
-              alignItems="flex-start"
+              justify="center"
+              alignItems="center"
               style={{padding: '10px'}}
          
             >
@@ -39,35 +36,36 @@ const ProjectTile = ({ title, titleColors, stack, description }) => {
                   ["#373B44", "#4286f4"],
                   ["#7F7FD5", "#86A8E7", "#91EAE4"],
                   ["#0f0c29", "#302b63", "#91EAE4"],
+                  ["#f5e3e6", "#d9e4f5"],
+                  ["#fff", "#fff"]
                 ]}
                 property="text"
                 element="p"
                 duration={1000}
                 angle="45deg"
-                className="text"
                 style={{
                   fontSize: "40px",
                   padding: 0,
                   margin: 0,
                   fontWeight: "bold",
-                  color: '#000'
+                  color: '#fff',
                 }}
               >
                 {title}
               </Gradient>
             </Grid>
-            <Grid item xs={12}>
-              <Typography variant="subtitle2" style={{ marginBottom: "10px",  color: '#000' }}>
+            <Grid container justify="center" item xs={12}>
+              <Typography variant="subtitle2" style={{ marginBottom: "10px",  color: '#fff' }}>
                 {stack}
               </Typography>
-              <Divider variant="middle" />
             </Grid>
           </Grid>
-          <Grid item xs={12} style={{ padding: 20, color: '#000' }}>
+          <Grid item xs={12} style={{ padding: 20, color: '#fff' }}>
+          <Divider style={{marginTop: '-20px', marginBottom: '20px', backgroundColor: '#fff'}} />
             <Typography variant="subtitle2">{description}</Typography>
           </Grid>
         </Grid>
-        <Grid
+        <Grid      
           container
           style={{ width: "100%", padding: "10px 0px 30px 0px" }}
           justify="center"
@@ -98,9 +96,8 @@ const ProjectTile = ({ title, titleColors, stack, description }) => {
             </Button>
           </Grid>
         </Grid>
-      </Paper>
-    </Grid>
+        </>
   );
 };
 
-export default ProjectTile;
+export default ProjectTile2;
