@@ -60,7 +60,10 @@ const ProjectImage = ({ image, children }) => {
     <>
       <img
         className="project-item"
-        style={{ borderRadius: "20px", width: extraSmall ? "70vw" : small ? "50vw" : "33vw" }}
+        style={{
+          borderRadius: "20px",
+          width: extraSmall ? "70vw" : small ? "50vw" : "33vw",
+        }}
         src={image}
         onClick={() => setDialogOpen(true)}
       />
@@ -177,6 +180,10 @@ const Projects = () => {
             titleColor={["#EF0D0D", "#000000"]}
             stack="Django, Python, React, TypeScript"
             description="A web application where you can save your meetings instead of them getting burried in your inbox, stores a list of your contacts and allows you to send meeting details and your schedule to your room mates or any of your contacts on whatsapp"
+            githubUrl={[
+              "https://github.com/Ahmed-I-Abdullah/zoomtify-front-end",
+              "https://github.com/Ahmed-I-Abdullah/zoomtify-rest-api",
+            ]}
           />
         </ProjectImage>
       ),
@@ -190,6 +197,9 @@ const Projects = () => {
             titleColor={["#000000"]}
             stack="Java, SQL"
             description="An application that can manage the flow of office furniture on campus to help the univeristy reuse parts of furninture to create new furniture at the lowest prices"
+            githubUrl={[
+              "https://github.com/Ahmed-I-Abdullah/supply-chain-managment-application",
+            ]}
           />
         </ProjectImage>
       ),
@@ -203,6 +213,7 @@ const Projects = () => {
             titleColor={["#000000"]}
             stack="GraphQL, AWS AppSync, AWS Amplify, React ,and Redux"
             description="A real-time chat application having similar functionalities to Whatsapp where users can add other users and start a chat with them, change profile picture and status etc"
+            githubUrl={["https://github.com/Ahmed-I-Abdullah/pachat"]}
           />
         </ProjectImage>
       ),
@@ -216,6 +227,9 @@ const Projects = () => {
             titleColor={["#000000"]}
             stack="Django, Python, React, Javascript"
             description="A web application that takes a pdf resume, gives it a score and gives the reasons behind a score lower than 100 with feedback to improve them"
+            githubUrl={[
+              "https://github.com/Tech-Start-UCalgary/ResumeTrackerApp",
+            ]}
           />
         </ProjectImage>
       ),
@@ -228,7 +242,10 @@ const Projects = () => {
             title="Facial Expressions"
             titleColor={["#000000"]}
             stack="TensorFlow, Python"
-            description="A convolutional neural network for facial expressions recognition, inspire to integrate it with online lectures to give feedback to professors on improving their pedagogical approaches"
+            description="A convolutional neural network for facial expressions recognition, inspired to integrate it with online lectures to give feedback to professors on improving their pedagogical approaches"
+            githubUrl={[
+              "https://github.com/Ahmed-I-Abdullah/real-time-facial-expressions-recognition",
+            ]}
           />
         </ProjectImage>
       ),

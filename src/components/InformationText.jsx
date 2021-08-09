@@ -1,12 +1,13 @@
 import TextScramble from "react-textscramble";
 
 let phrases = [
-  "My values are achievement, integrity, curiosity, and empathy. These values are important to the way I live and work.",
+  "My values are achievement, integrity, curiosity, and empathy. These values are important to the way I live and work",
   "I believe in change and lifetime learning",
+  "I build reusable, maintainable, scalable and testable software",
 ];
-let freezeDuration = 2600;
+let freezeDuration = 3000;
 
-const InformationText = ({fontSize}) => {
+const InformationText = ({ fontSize }) => {
   return (
     <div
       style={{
