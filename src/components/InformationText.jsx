@@ -1,9 +1,9 @@
 import TextScramble from "react-textscramble";
 
 let phrases = [
-  "My values are achievement, integrity, curiosity, and empathy. These values are important to the way I live and work",
-  "I believe in change and lifetime learning",
-  "I build reusable, maintainable, scalable and testable software",
+  "My values are achievement, integrity, curiosity, and empathy. These values are important to the way I live and work.",
+  "I believe in change and lifetime learning.",
+  "I build reusable, maintainable, scalable and testable software.",
 ];
 let freezeDuration = 3000;
 
