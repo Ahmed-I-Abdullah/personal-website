@@ -146,7 +146,7 @@ const Skills3 = () => {
           style={{ display: "block", width: "300px", margin: "auto", marginBottom: extraSmall ? "-110px": "200px" }}
         >
           <div
-            style={{ left: extraSmall ? "5%" : small ? "-25%" : "-60%", marginTop: extraSmall ? "90px" : "" }}
+            style={{ left: extraSmall ? "3%" : small ? "-25%" : "-60%", marginTop: extraSmall ? "90px" : "" }}
             className={`container ${classes.orbitContainer}`}
           >
             <div
@@ -168,7 +168,7 @@ const Skills3 = () => {
               >
                 {selectedItem?.component}
                 <div style={{ height: "5px" }} />
-                <h4 style={{ padding: 0, margin: 0 }}>{selectedItem?.name}</h4>
+                <h4 style={{ padding: 0, margin: 0, fontSize: extraSmall ? '0.75em' : '1em' }}>{selectedItem?.name}</h4>
               </div>
             </div>
 

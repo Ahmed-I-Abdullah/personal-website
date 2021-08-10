@@ -7,11 +7,19 @@ import {
 } from "@material-ui/core";
 import { Link as ScrollLink } from "react-scroll";
 
+const sendEmail = () => {
+  const link =
+    "mailto:ahmed.abdullah@ucalgary.ca" +
+    "?subject=" +
+    encodeURIComponent("Inquiry From Personal Website");
+  window.location.href = link;
+};
+
 const Footer = () => {
   const theme = useTheme();
   const extraSmall = useMediaQuery(theme.breakpoints.down("sm"));
   return (
-    <footer style={{ backgroundColor: "#1c2d41", zIndex: '1000' }}>
+    <footer style={{ backgroundColor: "#1c2d41", zIndex: "1000" }}>
       <div
         style={{
           display: "flex",
@@ -68,7 +76,9 @@ const Footer = () => {
               style={{ color: "#fff" }}
               component="button"
               variant="body2"
-              onClick={() => {}}
+              onClick={() => {
+                sendEmail();
+              }}
             >
               Email
             </Link>
@@ -76,9 +86,24 @@ const Footer = () => {
               style={{ color: "#fff" }}
               component="button"
               variant="body2"
-              onClick={() => {}}
+              onClick={() => {
+                window.open(
+                  "https://www.linkedin.com/in/ahmed-i-abdullah/",
+                  "_blank"
+                );
+              }}
             >
               Linked In
+            </Link>
+            <Link
+              style={{ color: "#fff" }}
+              component="button"
+              variant="body2"
+              onClick={() => {
+                window.open("https://github.com/Ahmed-I-Abdullah", "_blank");
+              }}
+            >
+              Github
             </Link>
           </div>
         </div>
