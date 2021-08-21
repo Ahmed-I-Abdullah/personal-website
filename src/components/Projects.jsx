@@ -50,6 +50,7 @@ const ProjectImage = ({ image, index, currentSlide, children }) => {
   const [dialogOpen, setDialogOpen] = useState(false);
   const [showClass, setShowClass] = useState(false);
   const [openingAction, setOpeningAction] = useState(false);
+  const [hovered, setHovered] = useState(false);
 
   useEffect(() => {
     if (!dialogOpen) {
@@ -73,7 +74,7 @@ const ProjectImage = ({ image, index, currentSlide, children }) => {
           dialogOpen || (!dialogOpen && showClass)
             ? "open-project-item"
             : (!dialogOpen && !showClass && openingAction) ||
-              currentSlide === index
+              (currentSlide === index && hovered)
             ? "close-dialog"
             : ""
         }`}
@@ -83,6 +84,9 @@ const ProjectImage = ({ image, index, currentSlide, children }) => {
         }}
         src={image}
         onClick={() => setDialogOpen(true)}
+        onMouseOver={() => {
+          setHovered(true);
+        }}
       />
       <Dialog
         open={dialogOpen}
