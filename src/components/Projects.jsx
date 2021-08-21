@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   makeStyles,
   useMediaQuery,
@@ -56,10 +56,29 @@ const ProjectImage = ({ image, children }) => {
   const medium = useMediaQuery(theme.breakpoints.down("md"));
   const large = useMediaQuery(theme.breakpoints.down("lg"));
   const [dialogOpen, setDialogOpen] = useState(false);
+  const [showClass, setShowClass] = useState(false);
+  const [openingAction, setOpeningAction] = useState(false);
+
+  useEffect(() => {
+    if(!dialogOpen) {
+      setTimeout(function(){ 
+        setShowClass(dialogOpen);
+       }, 600);
+       setTimeout(function(){ 
+        setOpeningAction(dialogOpen);
+       }, 1600);
+    } else {
+      setShowClass(dialogOpen);
+      setOpeningAction(dialogOpen);
+    }
+    
+  }, [dialogOpen]);
+  console.log("dilog open is: ", dialogOpen);
+  console.log("shiw class is: ", showClass);
   return (
     <>
       <img
-        className="project-item"
+        className={`project-item ${dialogOpen || !dialogOpen && showClass ? 'open-project-item' : !dialogOpen && !showClass && openingAction? 'close-dialog' : ''}`}
         style={{
           borderRadius: "20px",
           width: extraSmall ? "70vw" : small ? "50vw" : "33vw",

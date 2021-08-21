@@ -1,10 +1,18 @@
 .project-item {
     cursor: pointer;
-    animation: box-shadow-unhover 0.5s forwards;
 }
 
 .project-item:hover {
     animation: box-shadow-hover 0.5s forwards;
+}
+
+.open-project-item {
+  transform: scale(1.05);
+  box-shadow: 0px 2px 16px 7px #A0A0A0;
+}
+
+.close-dialog {
+  animation: box-shadow-unhover 1.5s forwards;
 }
 
 
