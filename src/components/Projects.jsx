@@ -49,7 +49,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Grow ref={ref} {...props} timeout={1000} />;
 });
 
-const ProjectImage = ({ image, children }) => {
+const ProjectImage = ({ image, index, currentSlide, children }) => {
   const theme = useTheme();
   const extraSmall = useMediaQuery(theme.breakpoints.down("xs"));
   const small = useMediaQuery(theme.breakpoints.down("sm"));
@@ -73,12 +73,12 @@ const ProjectImage = ({ image, children }) => {
     }
     
   }, [dialogOpen]);
-  console.log("dilog open is: ", dialogOpen);
-  console.log("shiw class is: ", showClass);
+
+
   return (
     <>
       <img
-        className={`project-item ${dialogOpen || !dialogOpen && showClass ? 'open-project-item' : !dialogOpen && !showClass && openingAction? 'close-dialog' : ''}`}
+        className={`project-item ${dialogOpen || (!dialogOpen && showClass) ? 'open-project-item' : !dialogOpen && !showClass && openingAction || currentSlide === index? 'close-dialog' : ''}`}
         style={{
           borderRadius: "20px",
           width: extraSmall ? "70vw" : small ? "50vw" : "33vw",
@@ -115,9 +115,17 @@ const Projects = () => {
 
   const handleSlideChange = (forward) => {
     if (forward) {
-      setGoToSlide((prevState) => prevState + 1);
+      if(goToSlide === slides.length - 1) {
+        setGoToSlide(0); 
+      } else {
+        setGoToSlide((prevState) => prevState + 1);
+      }
     } else {
-      setGoToSlide((prevState) => prevState - 1);
+      if(goToSlide === 0) {
+        setGoToSlide(slides.length - 1);
+      } else {
+        setGoToSlide((prevState) => prevState - 1);
+      }
     }
   };
 
@@ -193,7 +201,7 @@ const Projects = () => {
     {
       key: uuidv4(),
       content: (
-        <ProjectImage image={Zoomtify}>
+        <ProjectImage image={Zoomtify} currentSlide={goToSlide} index={0}>
           <ProjectTile2
             title="Zoomtify"
             titleColor={["#EF0D0D", "#000000"]}
@@ -210,7 +218,7 @@ const Projects = () => {
     {
       key: uuidv4(),
       content: (
-        <ProjectImage image={SCM}>
+        <ProjectImage image={SCM} currentSlide={goToSlide} index={1}>
           <ProjectTile2
             title="Supply Chain Management"
             titleColor={["#000000"]}
@@ -226,7 +234,7 @@ const Projects = () => {
     {
       key: uuidv4(),
       content: (
-        <ProjectImage image={pachat}>
+        <ProjectImage image={pachat} currentSlide={goToSlide} index={2}>
           <ProjectTile2
             title="Pachat"
             titleColor={["#000000"]}
@@ -240,7 +248,7 @@ const Projects = () => {
     {
       key: uuidv4(),
       content: (
-        <ProjectImage image={ResumeRater}>
+        <ProjectImage image={ResumeRater} currentSlide={goToSlide} index={3}>
           <ProjectTile2
             title="Resume Rater"
             titleColor={["#000000"]}
@@ -256,7 +264,7 @@ const Projects = () => {
     {
       key: uuidv4(),
       content: (
-        <ProjectImage image={FacialRecognition}>
+        <ProjectImage image={FacialRecognition} currentSlide={goToSlide} index={4}>
           <ProjectTile2
             title="Facial Expressions"
             titleColor={["#000000"]}
