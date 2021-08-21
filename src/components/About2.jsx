@@ -3,7 +3,6 @@ import {
   makeStyles,
   useTheme,
   useMediaQuery,
-  Divider,
 } from "@material-ui/core";
 import ParticlesAnimation from "./ParticlesAnimation";
 import InformationText from "./InformationText";
@@ -47,7 +46,6 @@ const useStyles = makeStyles({
 const About2 = () => {
   const classes = useStyles();
   const theme = useTheme();
-  const small = useMediaQuery(theme.breakpoints.down("sm"));
   const extraSmall = useMediaQuery(theme.breakpoints.down("xs"));
   return (
     <div className={classes.container}>

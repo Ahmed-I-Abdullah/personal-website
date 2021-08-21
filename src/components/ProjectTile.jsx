@@ -11,7 +11,6 @@ import {
 import { Gradient } from "react-gradient";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import VisibilityIcon from "@material-ui/icons/Visibility";
-import Zoomtify from "../assets/zoomtify.svg";
 
 const ProjectTile = ({ title, titleColors, stack, description }) => {
   const theme = useTheme();

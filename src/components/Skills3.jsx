@@ -75,7 +75,6 @@ const useStyles = makeStyles({
 const OrbitItem = ({ component, color, index, setSelectedItem }) => {
   const classes = useStyles();
   const theme = useTheme();
-  const small = useMediaQuery(theme.breakpoints.down("sm"));
   const extraSmall = useMediaQuery(theme.breakpoints.down("xs"));
   const [itemOpacity, setItemOpacity] = useState(1);
   const [itemBorder, setItemBorder] = useState(0);

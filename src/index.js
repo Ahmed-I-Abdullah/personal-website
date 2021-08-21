@@ -7,6 +7,7 @@ import Amplify from "aws-amplify";
 import awsExports from "./aws-exports";
 Amplify.configure(awsExports);
 
+console.log = console.warn = console.error = () => {};
 ReactDOM.render(
   <React.StrictMode>
     <App />

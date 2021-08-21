@@ -3,21 +3,15 @@ import {
   makeStyles,
   useMediaQuery,
   useTheme,
-  Button,
   IconButton,
-  Paper,
   Dialog,
-  DialogActions,
   DialogContent,
-  DialogContentText,
-  DialogTitle,
   Grow,
 } from "@material-ui/core";
 import { ArrowBackIos, ArrowForwardIos } from "@material-ui/icons";
 import Carousel from "react-spring-3d-carousel";
 import { v4 as uuidv4 } from "uuid";
 import { config } from "react-spring";
-import ProjectTile from "./ProjectTile";
 import ProjectTile2 from "./ProjectTile2";
 import Zoomtify from "../assets/zoomtify.svg";
 import SCM from "../assets/supply-chain-management.svg";
@@ -53,32 +47,36 @@ const ProjectImage = ({ image, index, currentSlide, children }) => {
   const theme = useTheme();
   const extraSmall = useMediaQuery(theme.breakpoints.down("xs"));
   const small = useMediaQuery(theme.breakpoints.down("sm"));
-  const medium = useMediaQuery(theme.breakpoints.down("md"));
-  const large = useMediaQuery(theme.breakpoints.down("lg"));
   const [dialogOpen, setDialogOpen] = useState(false);
   const [showClass, setShowClass] = useState(false);
   const [openingAction, setOpeningAction] = useState(false);
 
   useEffect(() => {
-    if(!dialogOpen) {
-      setTimeout(function(){ 
+    if (!dialogOpen) {
+      setTimeout(function () {
         setShowClass(dialogOpen);
-       }, 600);
-       setTimeout(function(){ 
+      }, 600);
+      setTimeout(function () {
         setOpeningAction(dialogOpen);
-       }, 1600);
+      }, 1600);
     } else {
       setShowClass(dialogOpen);
       setOpeningAction(dialogOpen);
     }
-    
   }, [dialogOpen]);
-
 
   return (
     <>
       <img
-        className={`project-item ${dialogOpen || (!dialogOpen && showClass) ? 'open-project-item' : !dialogOpen && !showClass && openingAction || currentSlide === index? 'close-dialog' : ''}`}
+        alt="project demo"
+        className={`project-item ${
+          dialogOpen || (!dialogOpen && showClass)
+            ? "open-project-item"
+            : (!dialogOpen && !showClass && openingAction) ||
+              currentSlide === index
+            ? "close-dialog"
+            : ""
+        }`}
         style={{
           borderRadius: "20px",
           width: extraSmall ? "70vw" : small ? "50vw" : "33vw",
@@ -110,18 +108,16 @@ const Projects = () => {
   const theme = useTheme();
   const extraSmall = useMediaQuery(theme.breakpoints.down("xs"));
   const small = useMediaQuery(theme.breakpoints.down("sm"));
-  const medium = useMediaQuery(theme.breakpoints.down("md"));
-  const large = useMediaQuery(theme.breakpoints.down("lg"));
 
   const handleSlideChange = (forward) => {
     if (forward) {
-      if(goToSlide === slides.length - 1) {
-        setGoToSlide(0); 
+      if (goToSlide === slides.length - 1) {
+        setGoToSlide(0);
       } else {
         setGoToSlide((prevState) => prevState + 1);
       }
     } else {
-      if(goToSlide === 0) {
+      if (goToSlide === 0) {
         setGoToSlide(slides.length - 1);
       } else {
         setGoToSlide((prevState) => prevState - 1);
@@ -129,74 +125,74 @@ const Projects = () => {
     }
   };
 
-  const oldSlides = [
-    {
-      key: uuidv4(),
-      content: (
-        <ProjectTile
-          title="Zoomtify"
-          titleColor={["#EF0D0D", "#000000"]}
-          stack="Django, Python, React, TypeScript"
-          description="A web application where you can save your meetings instead of them getting burried in your inbox, stores a list of your contacts and allows you to send meeting details and your schedule to your room mates or any of your contacts on whatsapp"
-        />
-      ),
-    },
-    {
-      key: uuidv4(),
-      content: (
-        <ProjectTile
-          title="Facial Expressions Recognition"
-          titleColor={["#000000"]}
-          stack="Tensorflow, Python"
-          description="A convolutional neural network using running time as a satisficing metric for real-time facial expressions analysis"
-        />
-      ),
-    },
-    {
-      key: uuidv4(),
-      content: (
-        <ProjectTile
-          title="Pachat"
-          titleColor={["#000000"]}
-          stack="GraphQL, AWS AppSync, AWS Amplify, React ,and Redux"
-          description="A real-time chat application having similar functionalities to Whatsapp where users can add other users and start a chat with them, change profile picture and status etc"
-        />
-      ),
-    },
-    {
-      key: uuidv4(),
-      content: (
-        <ProjectTile
-          title="Supply Chain Management"
-          titleColor={["#000000"]}
-          stack="Java, SQL"
-          description="An application that can manage the flow of office furniture on campus to help the univeristy reuse parts of furninture to create new furniture at the lowest prices"
-        />
-      ),
-    },
-    {
-      key: uuidv4(),
-      content: (
-        <ProjectTile
-          title="Solar Car Race Dashboard"
-          titleColor={["#000000"]}
-          stack="C++, QT, QML"
-          description="A car dashboard "
-        />
-      ),
-    },
-    {
-      key: uuidv4(),
-      content: (
-        <ProjectTile
-          title="Resume Rater"
-          titleColor={["#000000"]}
-          stack="Django, Python, React, Javascript"
-          description="A web application that takes a pdf resume, gives it a score and gives the reasons behind a score lower than 100 with feedback to improve them"
-        />
-      ),
-    },
-  ];
+  // const oldSlides = [
+  //   {
+  //     key: uuidv4(),
+  //     content: (
+  //       <ProjectTile
+  //         title="Zoomtify"
+  //         titleColor={["#EF0D0D", "#000000"]}
+  //         stack="Django, Python, React, TypeScript"
+  //         description="A web application where you can save your meetings instead of them getting burried in your inbox, stores a list of your contacts and allows you to send meeting details and your schedule to your room mates or any of your contacts on whatsapp"
+  //       />
+  //     ),
+  //   },
+  //   {
+  //     key: uuidv4(),
+  //     content: (
+  //       <ProjectTile
+  //         title="Facial Expressions Recognition"
+  //         titleColor={["#000000"]}
+  //         stack="Tensorflow, Python"
+  //         description="A convolutional neural network using running time as a satisficing metric for real-time facial expressions analysis"
+  //       />
+  //     ),
+  //   },
+  //   {
+  //     key: uuidv4(),
+  //     content: (
+  //       <ProjectTile
+  //         title="Pachat"
+  //         titleColor={["#000000"]}
+  //         stack="GraphQL, AWS AppSync, AWS Amplify, React ,and Redux"
+  //         description="A real-time chat application having similar functionalities to Whatsapp where users can add other users and start a chat with them, change profile picture and status etc"
+  //       />
+  //     ),
+  //   },
+  //   {
+  //     key: uuidv4(),
+  //     content: (
+  //       <ProjectTile
+  //         title="Supply Chain Management"
+  //         titleColor={["#000000"]}
+  //         stack="Java, SQL"
+  //         description="An application that can manage the flow of office furniture on campus to help the univeristy reuse parts of furninture to create new furniture at the lowest prices"
+  //       />
+  //     ),
+  //   },
+  //   {
+  //     key: uuidv4(),
+  //     content: (
+  //       <ProjectTile
+  //         title="Solar Car Race Dashboard"
+  //         titleColor={["#000000"]}
+  //         stack="C++, QT, QML"
+  //         description="A car dashboard "
+  //       />
+  //     ),
+  //   },
+  //   {
+  //     key: uuidv4(),
+  //     content: (
+  //       <ProjectTile
+  //         title="Resume Rater"
+  //         titleColor={["#000000"]}
+  //         stack="Django, Python, React, Javascript"
+  //         description="A web application that takes a pdf resume, gives it a score and gives the reasons behind a score lower than 100 with feedback to improve them"
+  //       />
+  //     ),
+  //   },
+  // ];
   const slides = [
     {
       key: uuidv4(),
@@ -264,7 +260,11 @@ const Projects = () => {
     {
       key: uuidv4(),
       content: (
-        <ProjectImage image={FacialRecognition} currentSlide={goToSlide} index={4}>
+        <ProjectImage
+          image={FacialRecognition}
+          currentSlide={goToSlide}
+          index={4}
+        >
           <ProjectTile2
             title="Facial Expressions"
             titleColor={["#000000"]}

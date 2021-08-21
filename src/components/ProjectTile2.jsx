@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Grid,
-  Paper,
   Typography,
   Divider,
   Button,
@@ -10,8 +9,6 @@ import {
 } from "@material-ui/core";
 import { Gradient } from "react-gradient";
 import GitHubIcon from "@material-ui/icons/GitHub";
-import VisibilityIcon from "@material-ui/icons/Visibility";
-import Zoomtify from "../assets/zoomtify.svg";
 
 const ProjectTile2 = ({
   title,
