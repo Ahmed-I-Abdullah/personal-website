@@ -126,7 +126,7 @@ const ContactMe = () => {
   return (
     <div id="contact" className={classes.mainContainer}>
       <div>
-        <h1 style={{color: "#fffffe"}}>Contact Me</h1>
+        <h1 style={{ color: "#fffffe" }}>Contact Me</h1>
         <hr
           style={{
             color: "#ff8906",
@@ -140,7 +140,17 @@ const ContactMe = () => {
       <div>
         <Paper
           elevation={8}
-          style={{ width: "fit-content", margin: "auto", padding: 0 }}
+          style={{
+            width: extraSmall
+              ? "70vw"
+              : small
+              ? "50vw"
+              : large
+              ? "30vw"
+              : "20vw",
+            margin: "auto",
+            padding: 0,
+          }}
         >
           <div>
             <img
