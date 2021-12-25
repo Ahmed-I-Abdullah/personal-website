@@ -14,6 +14,7 @@ import { v4 as uuidv4 } from "uuid";
 import { config } from "react-spring";
 import ProjectTile2 from "./ProjectTile2";
 import Zoomtify from "../assets/zoomtify.svg";
+import Syenergy from "../assets/synergy.svg";
 import SCM from "../assets/supply-chain-management.svg";
 import pachat from "../assets/pachat.svg";
 import ResumeRater from "../assets/resumetracker.png";
@@ -129,79 +130,27 @@ const Projects = () => {
     }
   };
 
-  // const oldSlides = [
-  //   {
-  //     key: uuidv4(),
-  //     content: (
-  //       <ProjectTile
-  //         title="Zoomtify"
-  //         titleColor={["#EF0D0D", "#000000"]}
-  //         stack="Django, Python, React, TypeScript"
-  //         description="A web application where you can save your meetings instead of them getting burried in your inbox, stores a list of your contacts and allows you to send meeting details and your schedule to your room mates or any of your contacts on whatsapp"
-  //       />
-  //     ),
-  //   },
-  //   {
-  //     key: uuidv4(),
-  //     content: (
-  //       <ProjectTile
-  //         title="Facial Expressions Recognition"
-  //         titleColor={["#000000"]}
-  //         stack="Tensorflow, Python"
-  //         description="A convolutional neural network using running time as a satisficing metric for real-time facial expressions analysis"
-  //       />
-  //     ),
-  //   },
-  //   {
-  //     key: uuidv4(),
-  //     content: (
-  //       <ProjectTile
-  //         title="Pachat"
-  //         titleColor={["#000000"]}
-  //         stack="GraphQL, AWS AppSync, AWS Amplify, React ,and Redux"
-  //         description="A real-time chat application having similar functionalities to Whatsapp where users can add other users and start a chat with them, change profile picture and status etc"
-  //       />
-  //     ),
-  //   },
-  //   {
-  //     key: uuidv4(),
-  //     content: (
-  //       <ProjectTile
-  //         title="Supply Chain Management"
-  //         titleColor={["#000000"]}
-  //         stack="Java, SQL"
-  //         description="An application that can manage the flow of office furniture on campus to help the univeristy reuse parts of furninture to create new furniture at the lowest prices"
-  //       />
-  //     ),
-  //   },
-  //   {
-  //     key: uuidv4(),
-  //     content: (
-  //       <ProjectTile
-  //         title="Solar Car Race Dashboard"
-  //         titleColor={["#000000"]}
-  //         stack="C++, QT, QML"
-  //         description="A car dashboard "
-  //       />
-  //     ),
-  //   },
-  //   {
-  //     key: uuidv4(),
-  //     content: (
-  //       <ProjectTile
-  //         title="Resume Rater"
-  //         titleColor={["#000000"]}
-  //         stack="Django, Python, React, Javascript"
-  //         description="A web application that takes a pdf resume, gives it a score and gives the reasons behind a score lower than 100 with feedback to improve them"
-  //       />
-  //     ),
-  //   },
-  // ];
   const slides = [
     {
       key: uuidv4(),
       content: (
-        <ProjectImage image={Zoomtify} currentSlide={goToSlide} index={0}>
+        <ProjectImage image={Syenergy} currentSlide={goToSlide} index={0}>
+          <ProjectTile2
+            title="Synergy"
+            titleColor={["#EF0D0D", "#000000"]}
+            stack="Fiber, Go, React, TypeScript, PostgreSQL"
+            description="A web application for event management. Organizers can create events and streams, create custom forms for data analytics, view form responses of attendees, organize accommodations for attendees and invite unregistered users to get a ticket through email. Delegates can register in events, fill out forms and view their assigned accommodations and events' dates and times. Head delegates can manage delegates that attend their school, monitor form filling of delegates in their school, register in events, fill forms and view their accommodations."
+            githubUrl={[
+              "https://github.com/rjb75/databases-project"
+            ]}
+          />
+        </ProjectImage>
+      ),
+    },
+    {
+      key: uuidv4(),
+      content: (
+        <ProjectImage image={Zoomtify} currentSlide={goToSlide} index={1}>
           <ProjectTile2
             title="Zoomtify"
             titleColor={["#EF0D0D", "#000000"]}
@@ -218,7 +167,7 @@ const Projects = () => {
     {
       key: uuidv4(),
       content: (
-        <ProjectImage image={SCM} currentSlide={goToSlide} index={1}>
+        <ProjectImage image={SCM} currentSlide={goToSlide} index={2}>
           <ProjectTile2
             title="Supply Chain Management"
             titleColor={["#000000"]}
@@ -234,7 +183,7 @@ const Projects = () => {
     {
       key: uuidv4(),
       content: (
-        <ProjectImage image={pachat} currentSlide={goToSlide} index={2}>
+        <ProjectImage image={pachat} currentSlide={goToSlide} index={3}>
           <ProjectTile2
             title="Pachat"
             titleColor={["#000000"]}
@@ -248,7 +197,7 @@ const Projects = () => {
     {
       key: uuidv4(),
       content: (
-        <ProjectImage image={ResumeRater} currentSlide={goToSlide} index={3}>
+        <ProjectImage image={ResumeRater} currentSlide={goToSlide} index={4}>
           <ProjectTile2
             title="Resume Rater"
             titleColor={["#000000"]}
@@ -267,7 +216,7 @@ const Projects = () => {
         <ProjectImage
           image={FacialRecognition}
           currentSlide={goToSlide}
-          index={4}
+          index={5}
         >
           <ProjectTile2
             title="Facial Expressions"
